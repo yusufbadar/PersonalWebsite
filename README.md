@@ -2,7 +2,7 @@
 
 A minimal, high-craft portfolio site built with vanilla HTML, CSS, and JavaScript. No frameworks, no build tools — just clean code, intentional motion, and sharp design.
 
-**Live:** [yusufbadar.com](https://yusufbadar.com) (or wherever deployed)
+**Live:** [[yusufbadar.com](https://personal-website-nine-pi-16.vercel.app/)]([https://yusufbadar.com](https://personal-website-nine-pi-16.vercel.app/))
 
 ## Features
 
@@ -34,14 +34,6 @@ A minimal, high-craft portfolio site built with vanilla HTML, CSS, and JavaScrip
 ├── styles.css      # All styles, theming, and responsive rules
 ├── script.js       # Loader, animations, canvas renderers, scroll logic
 └── README.md
-```
-
-## Running Locally
-
-No dependencies to install. Just open `index.html` in a browser, or serve it:
-
-```bash
-npx serve .
 ```
 
 ## License

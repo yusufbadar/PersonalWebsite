@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Yusuf Badar is a software engineer building AI systems, quant tools, and polished digital products.">
+  <title>Yusuf Badar | Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-logo">
+      <svg class="loader-bars-svg" id="loader-bars-svg" viewBox="0 0 56 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="loader-bars">
+          <rect class="logo-bar" x="1" y="0" width="1.5" height="30" fill="currentColor"/>
+          <rect class="logo-bar" x="7.5" y="0" width="1.5" height="30" fill="currentColor"/>
+          <rect class="logo-bar" x="14" y="0" width="1.5" height="30" fill="currentColor"/>
+          <rect class="logo-bar" x="20.5" y="0" width="1.5" height="30" fill="currentColor"/>
+          <rect class="logo-bar" x="27" y="0" width="1.5" height="30" fill="currentColor"/>
+          <rect class="logo-bar" x="33.5" y="0" width="1.5" height="30" fill="currentColor"/>
+          <rect class="logo-bar" x="40" y="0" width="1.5" height="30" fill="currentColor"/>
+          <rect class="logo-bar" x="46.5" y="0" width="1.5" height="30" fill="currentColor"/>
+          <rect class="logo-bar" x="53" y="0" width="1.5" height="30" fill="currentColor"/>
+        </g>
+      </svg>
+      <span class="loader-yb" id="loader-yb">YB</span>
+    </div>
+    <p class="loader-text" id="loader-text">Yusuf Badar</p>
+  </div>
+
+  <div class="progress-line" aria-hidden="true">
+    <div class="progress-line-fill" id="progress-line-fill"></div>
+  </div>
+
+  <header class="site-nav" id="site-nav">
+    <a href="#top" class="nav-brand" aria-label="Yusuf Badar home">
+      <span class="nav-yb">YB</span>
+      <span class="nav-brand-copy">Yusuf Badar</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle contrast">
+        <span class="toggle-icon toggle-icon-light">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </span>
+        <span class="toggle-icon toggle-icon-dark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+      </button>
+      <a href="https://github.com/yusufbadar" target="_blank" rel="noreferrer" class="nav-cta">GitHub</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="container hero-shell">
+        <div class="hero-copy">
+          <p class="section-label reveal">Software engineer / AI / quant / New York</p>
+          <h1 class="hero-title" aria-label="Yusuf Badar">
+            <span class="split-line" data-text="Yusuf"></span>
+            <span class="split-line" data-text="Badar"></span>
+          </h1>
+          <p class="hero-sub reveal">
+            Computer Science and Applied Mathematics at Stony Brook, incoming at Visa, building AI systems, quant tools,
+            and interfaces that feel as considered as the engineering behind them.
+          </p>
+          <div class="hero-actions reveal">
+            <a class="button button-solid magnetic" href="#projects">Work</a>
+            <a class="button button-outline magnetic" href="#about">Read profile</a>
+          </div>
+        </div>
+
+        <div class="hero-stage reveal">
+          <div class="hero-stage-head">
+            <span>signal field</span>
+            <span>interactive motion surface</span>
+          </div>
+          <canvas id="hero-flow" class="flow-canvas" aria-hidden="true"></canvas>
+          <div class="hero-stage-footer">
+            <div>
+              <strong>Incoming at Visa</strong>
+              <span>software engineering</span>
+            </div>
+            <div>
+              <strong>Current focus</strong>
+              <span>AI systems, quant tooling, front-end craft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-metrics container reveal-group">
+        <article class="metric-card reveal">
+          <span class="metric-value" data-count="32000" data-suffix="+">0</span>
+          <p>students reached through shipped product and education work</p>
+        </article>
+        <article class="metric-card reveal">
+          <span class="metric-value" data-count="18.4" data-suffix="%" data-decimals="1">0</span>
+          <p>annual outperformance versus the S&amp;P 500 at Fourier Fund</p>
+        </article>
+        <article class="metric-card reveal">
+          <span class="metric-value" data-count="20000000" data-suffix="+">0</span>
+          <p>views generated across education content and distribution systems</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="about-orb" aria-hidden="true"></div>
+      <div class="container section-grid">
+        <div class="section-intro reveal">
+          <p class="section-label">About</p>
+          <h2 class="section-title">Simple on the surface.<br>Deep in the build.</h2>
+        </div>
+
+        <div class="about-copy reveal">
+          <p>
+            I care about interfaces that feel precise, but only when the engineering underneath them is equally sharp.
+            My work lives across AI, quantitative finance, backend systems, and front-end experiences that make technical products feel intentional.
+          </p>
+          <p>
+            The goal is not decoration. It is clarity, control, and motion that earns its place.
+          </p>
+        </div>
+
+        <div class="principle-grid">
+          <article class="principle-card reveal" data-depth="0.08">
+            <span>01</span>
+            <h3>Measured output</h3>
+            <p>I like work that can prove itself.</p>
+          </article>
+          <article class="principle-card reveal" data-depth="0.12">
+            <span>02</span>
+            <h3>Systems first</h3>
+            <p>Good interfaces matter more when the architecture is clear.</p>
+          </article>
+          <article class="principle-card reveal" data-depth="0.16">
+            <span>03</span>
+            <h3>Motion with purpose</h3>
+            <p>Animation should guide attention, not compete with it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects section" id="projects">
+      <div class="project-banner reveal">
+        <div class="banner-line" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="container banner-content">
+          <p class="section-label">Projects</p>
+          <h2 class="banner-title">Two builds worth opening the repo for.</h2>
+        </div>
+        <div class="banner-line" aria-hidden="true"><span></span><span></span><span></span></div>
+      </div>
+
+      <div class="container">
+        <div class="project-stack">
+          <article class="project-card reveal">
+            <div class="project-visual project-visual-market" aria-hidden="true">
+              <div class="market-grid"></div>
+              <div class="market-path market-path-a"></div>
+              <div class="market-window">
+                <div class="market-candles">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+            <div class="project-copy">
+              <p class="project-index">01</p>
+              <h3>Kalshi BTC Prediction Bot</h3>
+              <p>
+                A self-learning Bitcoin prediction system for 15-minute windows using XGBoost, engineered features, retraining loops,
+                and explicit risk controls.
+              </p>
+              <ul class="project-tags" aria-label="Technologies used">
+                <li>Python</li>
+                <li>XGBoost</li>
+                <li>Kalshi API</li>
+                <li>Binance API</li>
+                <li>NLP sentiment</li>
+                <li>risk management</li>
+              </ul>
+              <a href="https://github.com/yusufbadar/KalshiBTCPredictionModel15" target="_blank" rel="noreferrer" class="text-link magnetic">Open GitHub repo →</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-visual project-visual-orbit" aria-hidden="true">
+              <div class="orbit-system">
+                <div class="planet-core"></div>
+                <div class="planet-orbit orbit-1"><span class="planet planet-1"></span></div>
+                <div class="planet-orbit orbit-2"><span class="planet planet-2"></span></div>
+                <div class="planet-orbit orbit-3"><span class="planet planet-3"></span></div>
+                <div class="planet-orbit orbit-4"><span class="planet planet-4"></span></div>
+                <div class="planet-orbit orbit-5"><span class="planet planet-5"></span></div>
+                <div class="planet-orbit orbit-6"><span class="planet planet-6"></span></div>
+              </div>
+            </div>
+            <div class="project-copy">
+              <p class="project-index">02</p>
+              <h3>6-Player Poker Server</h3>
+              <p>
+                A Java TCP multiplayer server for Texas Hold'em with full game-state handling, betting rounds, pot logic,
+                and low-latency session flow for six simultaneous players.
+              </p>
+              <ul class="project-tags" aria-label="Technologies used">
+                <li>Java</li>
+                <li>TCP/IP</li>
+                <li>multithreading</li>
+                <li>state machines</li>
+                <li>networking</li>
+                <li>game logic</li>
+              </ul>
+              <a href="https://github.com/yusufbadar/6-Player-Poker-Server" target="_blank" rel="noreferrer" class="text-link magnetic">Open GitHub repo →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience section" id="experience">
+      <canvas class="timeline-canvas" id="timeline-canvas" aria-hidden="true"></canvas>
+      <div class="container section-grid section-grid-tight">
+        <div class="section-intro reveal" id="experience-intro">
+          <p class="section-label">Experience</p>
+          <h2 class="section-title">Building range without losing direction.</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">
+              <span>Feb 2025 – Present</span>
+              <span>Fourier Fund</span>
+            </div>
+            <h3>Senior Technical Analyst</h3>
+            <p>Leading quant research, backtesting, and portfolio tooling for a strategy that outperformed the S&amp;P 500 by 18.4% annually.</p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">
+              <span>May 2024 – Present</span>
+              <span>Outlier</span>
+            </div>
+            <h3>AI Engineer</h3>
+            <p>Improving model evaluation workflows and writing adversarial mathematical content to push reasoning quality higher.</p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">
+              <span>Oct 2022 – Apr 2024</span>
+              <span>GT School</span>
+            </div>
+            <h3>Software Engineer</h3>
+            <p>Built a Top-40 iOS education product and helped scale distribution to 32,000+ students and 20M+ views.</p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">
+              <span>Jan 2025 – Sep 2025</span>
+              <span>Blockchain Business Lab</span>
+            </div>
+            <h3>Research Leader</h3>
+            <p>Led an eight-member team fine-tuning DeepSeek-R1 for blockchain and crypto use cases with LoRA, Unsloth, and Kaggle GPU workflows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="toolkit section">
+      <div class="container section-grid section-grid-tight">
+        <div class="section-intro reveal">
+          <p class="section-label">Toolkit</p>
+          <h2 class="section-title">Technical depth, clean execution.</h2>
+        </div>
+
+        <div class="toolkit-panel reveal">
+          <div>
+            <span class="toolkit-label">Languages</span>
+            <p>Python, Java, C/C++, JavaScript, TypeScript</p>
+          </div>
+          <div>
+            <span class="toolkit-label">Web</span>
+            <p>React, Next.js, Node.js, Express, PostgreSQL, MongoDB</p>
+          </div>
+          <div>
+            <span class="toolkit-label">AI / ML</span>
+            <p>PyTorch, Hugging Face, Pandas, NumPy, LoRA, Unsloth</p>
+          </div>
+          <div>
+            <span class="toolkit-label">Quant / Infra</span>
+            <p>XGBoost, backtesting, Monte Carlo, AWS, Linux, Git, analytics</p>
+          </div>
+        </div>
+
+        <div class="toolkit-visuals">
+          <article class="toolkit-visual-card reveal">
+            <div class="toolkit-visual-head">
+              <span>Monte Carlo simulation</span>
+              <span>2D stochastic paths</span>
+            </div>
+            <canvas id="mc-2d-canvas" aria-hidden="true"></canvas>
+          </article>
+          <article class="toolkit-visual-card reveal">
+            <div class="toolkit-visual-head">
+              <span>prediction surface</span>
+              <span>3D wireframe mesh</span>
+            </div>
+            <canvas id="mc-3d-canvas" aria-hidden="true"></canvas>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="container contact-panel reveal">
+        <div>
+          <p class="section-label">Contact</p>
+          <h2 class="section-title">If the build needs depth and taste, let's talk.</h2>
+        </div>
+        <div class="contact-copy">
+          <p>
+            Open to internships, research, and ambitious software collaborations.
+          </p>
+          <div class="contact-links">
+            <a class="contact-btn magnetic" href="mailto:ybadar13@gmail.com">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <span>Email</span>
+            </a>
+            <a class="contact-btn magnetic" href="https://linkedin.com/in/yusuf-badar" target="_blank" rel="noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a class="contact-btn magnetic" href="https://github.com/yusufbadar" target="_blank" rel="noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

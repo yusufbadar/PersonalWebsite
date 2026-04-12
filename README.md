@@ -2,7 +2,7 @@
 
 A minimal, high-craft portfolio site built with vanilla HTML, CSS, and JavaScript. No frameworks, no build tools — just clean code, intentional motion, and sharp design.
 
-**Live:** [[yusufbadar.com](https://personal-website-nine-pi-16.vercel.app/)]([https://yusufbadar.com](https://personal-website-nine-pi-16.vercel.app/))
+**Live:** [[[yusufbadar.com](https://personal-website-nine-pi-16.vercel.app/)](https://personal-website-nine-pi-16.vercel.app/)]([https://yusufbadar.com](https://personal-website-nine-pi-16.vercel.app/))
 
 ## Features
 

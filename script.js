@@ -7,9 +7,12 @@ const loaderPercent = document.getElementById("loader-percent");
 const bigtexts = document.querySelectorAll(".bigtext");
 const revealItems = document.querySelectorAll(".parallax-image, .hero-scene, .toolkit-visual-card, .scatter-item");
 const heroCanvas = document.getElementById("hero-flow");
+const header = document.getElementById("header");
 const planetOrbits = document.querySelectorAll(".planet-orbit");
 const planets = document.querySelectorAll(".planet");
 const metricValues = document.querySelectorAll(".metric-value[data-count]");
+
+let expUpdate = null; // set by initExperienceScroll
 
 body.classList.add("is-locked");
 
@@ -476,13 +479,60 @@ function initMobileMenu() {
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
 }
 
+/* ─── EXPERIENCE: PINNED HORIZONTAL SCROLL ─────────────── */
+
+function initExperienceScroll() {
+  const section = document.getElementById("experience");
+  const track = document.getElementById("exp-track");
+  if (!section || !track) return;
+  const viewport = track.parentElement;
+  let maxX = 0;
+
+  function measure() {
+    const small = window.innerWidth < 768 || prefersReducedMotion;
+    if (small) {
+      section.classList.add("exp-static");
+      section.style.height = "";
+      track.style.transform = "";
+      maxX = 0;
+      return;
+    }
+    section.classList.remove("exp-static");
+    track.style.transform = "";
+    maxX = Math.max(0, track.scrollWidth - viewport.clientWidth);
+    section.style.height = (window.innerHeight + maxX) + "px";
+    update();
+  }
+
+  function update() {
+    if (maxX <= 0) { track.style.transform = ""; return; }
+    const top = section.getBoundingClientRect().top;
+    const total = section.offsetHeight - window.innerHeight;
+    let p = total > 0 ? -top / total : 0;
+    p = p < 0 ? 0 : p > 1 ? 1 : p;
+    track.style.transform = `translate3d(${(-(p * maxX)).toFixed(2)}px, 0, 0)`;
+  }
+
+  expUpdate = update;
+  window.addEventListener("resize", measure);
+  window.addEventListener("load", measure);
+  measure();
+  setTimeout(measure, 400);
+}
+
 /* ─── SCROLL LOOP ──────────────────────────────────────── */
 
 let ticking = false;
+function runScrollWork() {
+  if (header) header.classList.toggle("is-scrolled", window.scrollY > 32);
+  if (expUpdate) expUpdate();
+  checkInView();
+  ticking = false;
+}
 function onScroll() {
   if (ticking) return;
   ticking = true;
-  requestAnimationFrame(() => { checkInView(); ticking = false; });
+  requestAnimationFrame(runScrollWork);
 }
 
 /* ─── BOOT ─────────────────────────────────────────────── */
@@ -493,10 +543,12 @@ initMobileMenu();
 initFlowField(heroCanvas);
 initMC2D();
 initMC3D();
+initExperienceScroll();
 initLoader();
 
 window.addEventListener("scroll", onScroll, { passive: true });
-window.addEventListener("resize", checkInView, { passive: true });
+window.addEventListener("resize", () => { checkInView(); if (expUpdate) expUpdate(); }, { passive: true });
 // A few post-load sweeps in case layout shifts after fonts/images load.
 window.addEventListener("load", () => { checkInView(); setTimeout(checkInView, 300); });
 setTimeout(checkInView, 1200);
+if (header) header.classList.toggle("is-scrolled", window.scrollY > 32);

@@ -1021,6 +1021,11 @@ a:focus-visible, button:focus-visible { outline: thin dashed; outline-offset: 4p
 
 .section-statement { margin-bottom: 3rem; }
 
+/* single long word "EXPERIENCE" — size it so it never overflows */
+.experience .section-statement {
+  font-size: clamp(2.3rem, 12.5vw, 8rem);
+}
+
 .experience {
   position: relative;
   border-top: 1px solid var(--hairline);
@@ -1070,9 +1075,9 @@ a:focus-visible, button:focus-visible { outline: thin dashed; outline-offset: 4p
 
 .exp-card {
   flex: 0 0 auto;
-  width: clamp(280px, 34vw, 440px);
-  height: clamp(320px, 52vh, 460px);
-  padding: 1.75rem;
+  width: clamp(300px, 38vw, 500px);
+  height: clamp(360px, 60vh, 540px);
+  padding: 2rem;
   border: 1px solid var(--hairline);
   background: var(--scene-bg);
   display: flex;
@@ -1106,9 +1111,9 @@ a:focus-visible, button:focus-visible { outline: thin dashed; outline-offset: 4p
 .exp-card-foot { display: flex; flex-direction: column; gap: 0.55rem; }
 
 .exp-logo {
-  width: 78px;
-  height: 78px;
-  margin-bottom: 0.95rem;
+  width: 86px;
+  height: 86px;
+  margin-bottom: 1.1rem;
   border: 1px solid var(--scene-line);
   background: var(--light-grey);
   overflow: hidden;

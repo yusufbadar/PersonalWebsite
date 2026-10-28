@@ -1,4 +1,3 @@
-[![Run on pyrovue](https://pyrovue.com/badge.svg)](https://pyrovue.com/github.com/yusufbadar/PersonalWebsite?ref=badge)
 
 # Yusuf Badar — Personal Website
 

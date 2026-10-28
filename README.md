@@ -1,4 +1,4 @@
-[![Run on pyrovue](https://pyrovue.com/badge.svg)](https://pyrovue.com/github.com/yusufbadar/PersonalWebsite?ref=badge)
+
 # Yusuf Badar — Personal Website
 
 A minimal, high-craft portfolio site built with vanilla HTML, CSS, and JavaScript. No frameworks, no build tools — just clean code, intentional motion, and sharp design.
